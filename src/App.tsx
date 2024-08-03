@@ -3,19 +3,31 @@
 // import viteLogo from '../public/images/vite.svg'
 import './index.css'
 import MenuLateral from './components/MenuLateral'
-import Footer from './components/Footer'
-import logo from '../public/images/LogoAppOonceptionWhiteSpear.png'
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
+library.add(fas)
+
+class User {
+  Nome: string
+  Senha: number
+
+  constructor(Nome: string, Senha: number) {
+    this.Nome = Nome
+    this.Senha = Senha
+  }
+}
+const user: User = new User('Thiago dos Santos', 12345)
 
 function App() {
 
   return (
-    <div className='*:font-sans flex flex-col content-between bg-mint-green h-screen'>
+    <div className='*:font-sans flex flex-row content-between bg-principalBG h-screen'>
       <MenuLateral />
       <main className='flex items-center justify-center h-screen'>
-        <h1>My app</h1>
-        <img src={logo} alt="" />
+        <h1 className='text-principalWG'>Olá, Senhor {user.Nome}</h1>
+        <h1 className='text-principalWG'>Seu número é {user.Senha}</h1>
       </main>
-      <Footer />
     </div>
   )
 }
