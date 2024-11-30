@@ -2,13 +2,12 @@
 // import reactLogo from '../public/images/react.svg'
 // import viteLogo from '../public/images/vite.svg'
 import './index.css'
-import MenuLateral from './components/MenuLateral'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 
 library.add(fas)
 
-class User {
+export class User {
   Nome: string
   Senha: number
 
@@ -23,7 +22,6 @@ function App() {
 
   return (
     <div className='*:font-sans flex flex-row content-between bg-principalBG h-screen'>
-      <MenuLateral />
       <main className='flex items-center justify-center h-screen'>
         <h1 className='text-principalWG'>Olá, Senhor {user.Nome}</h1>
         <h1 className='text-principalWG'>Seu número é {user.Senha}</h1>
