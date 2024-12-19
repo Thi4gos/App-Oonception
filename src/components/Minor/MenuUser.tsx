@@ -9,6 +9,7 @@ function MenuUser() {
     return(
         <div>
             <div>
+                <p>Usuário logado</p>
                 {/* <img src={picture} alt="Profile picture"/> */}
             </div>
         </div>
