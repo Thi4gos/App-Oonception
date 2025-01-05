@@ -1,4 +1,4 @@
-{
+export const data = {
     "Usuario": {
         "nome": "Thiago dos Santos Silva",
         "email": "ts214343@gmail.com",
