@@ -1,7 +1,6 @@
 function WorkSpace() {
     return (
-        <div>
-            /* From Uiverse.io by mRcOol7 */ 
+        <div className="p-12">
             <button
             className="group cursor-pointer outline-none hover:rotate-90 duration-300"
             title="Add New"

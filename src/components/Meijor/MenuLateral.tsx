@@ -1,14 +1,14 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import logo from '../../public/images/LogoAppOonceptionWhiteSpear.png'
-import MenuUser from '../Minor/MenuUser';
 import { useState } from 'react';
 import { env } from "../../services/getData"
-import { faMagnifyingGlass, faSun } from '@fortawesome/free-solid-svg-icons';
+import ButtonToSomething from '../Minor/DirectoToButton';
+import { faMagnifyingGlass, faSun, faBars } from '@fortawesome/free-solid-svg-icons';
 
 function MenuLateral() {
-    function addNum(): void {
-        console.log(1);
-    }
+    // function addNum(): void {
+    //     console.log(1);
+    // }
 
     function addNewPag(): void {
         
@@ -17,7 +17,7 @@ function MenuLateral() {
         env.getData
     }
 
-    const [isOpen, turnOpen] = useState(false); {/* usestate boolean para verificar o estado do menu: Aberto por padrão ou minimizado lateralmente*/}
+    const [isOpen, turnOpen] = useState(true); {/* usestate boolean para verificar o estado do menu: Aberto por padrão ou minimizado lateralmente*/}
 
     return (
         <div 
@@ -25,8 +25,11 @@ function MenuLateral() {
             ${isOpen ? 'w-fit h-screen' : 'w-4 h-full hover:w-24'}`}>
             
             {/* MENU USER */}
-            <div>
-                <MenuUser />
+            <div className='flex flex-row gap-3 align-middle justify-center'>     
+                <p>Usuário logado</p>
+                <FontAwesomeIcon  onClick={() => turnOpen(!isOpen)} className='mt-1 cursor-pointer' icon={faBars} />
+                {/* <img src={picture} alt="Profile picture"/> */}   
+                
             </div>
     
             {/* BOTÕES */}
@@ -35,16 +38,13 @@ function MenuLateral() {
                 ${isOpen ? '*:opacity-100 *:pointer-events-auto' : '*:opacity-0 *:pointer-events-none hover:*:opacity-100 hover:*:pointer-events-auto'}`}>
                 
                 <button onClick={addNewPag}>Criar nova página</button>
-                <p className='hover:bg-gray-400'>
-                    <FontAwesomeIcon icon={faSun}/> Aparência
-                </p>
-                <p className="hover:bg-gray-400">
-                    <FontAwesomeIcon onClick={addNum} icon={faMagnifyingGlass}/> Pesquisar
-                </p>
-                <div className='hover:bg-gray-400'>Notificaçãoes</div>
-                <div className='hover:bg-gray-400'>Avisos</div>
+                <ButtonToSomething title='Aparência' icon={faSun}></ButtonToSomething>        
+                <ButtonToSomething title='Pesquisar' icon={faMagnifyingGlass} ></ButtonToSomething>
+                <ButtonToSomething title='botão teste'></ButtonToSomething>
+                <ButtonToSomething title='Notificações'></ButtonToSomething>
+                <ButtonToSomething title='Avisos'></ButtonToSomething>
+                
                 <div onClick={getDt}>Mostrar dados</div>
-                <div onClick={() => turnOpen(!isOpen)}>Mudar para oculto</div>
             </div>
         </div>
     );    
